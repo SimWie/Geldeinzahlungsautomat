@@ -20,6 +20,7 @@ public class cKundenManagment {
         // Kunden hinzufügen
         public void neuKunde(cKunde kunde) {
             kunden.add(kunde);
+
         }
     
         // Kunden speichern (JSON)
@@ -47,5 +48,13 @@ public class cKundenManagment {
         public void anzeigenKunden() {
             kunden.forEach(System.out::println);
         }
-
+    
+        public int getLastCustomerId() {
+                   
+            if (kunden == null || kunden.isEmpty()) {
+                return 0; // Falls keine Kunden vorhanden sind
+            }
+            // Letztes Element der Liste abrufen
+            return kunden.get(kunden.size()-1).getKundenNr();
+        }
     }

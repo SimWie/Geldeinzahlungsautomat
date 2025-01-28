@@ -3,7 +3,6 @@ package Simon;
 
 public class cKunde {
     
-    int Id = 0;
     String Vornahme = "";
     String Nachnahme = "";
     int Age = 0;
@@ -17,17 +16,18 @@ public class cKunde {
         this.Vornahme = Vornahme;
         this.Nachnahme = Nachnahme;
         this.Age = Age;
+        this.KundenNr = KundenNr++;
 
     }
 
 
     // Getter und Setter
-    public int getId() {
-        return Id;
+    public int getKundenNr() {
+        return KundenNr;
     }
 
-    public void setId(int Id) {
-        this.Id = Id;
+    public void setKundenNr(int KundenNr) {
+        this.KundenNr = KundenNr;
     }
 
 
@@ -65,7 +65,7 @@ public class cKunde {
     @Override
     public String toString() {
         
-        return Id +  Vornahme + " " + Nachnahme + "\t\t" + Age + "\t\t" + KundenNr;
+        return KundenNr + "\t" + Vornahme + " " + Nachnahme + "\t\t\t" + Age;
 
     }
 

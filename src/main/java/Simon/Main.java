@@ -33,31 +33,41 @@ public class Main {
     
         while (exit) { 
 
+            System.out.println("Hauptmenu");
+            System.out.println("U -> Usermanagment");
+            System.out.println("W -> Waehrungsmanagment");
+            System.out.println("Q -> Quitttungen");
+            System.out.println("exit -> Program beenden");
+
+            
             //Hauptmenu
             switch (scanner.nextLine()) {
-                case "Usermanagment" -> {
+                case "U","u" -> {
 
                     userInterface(management, scanner);
         
 
-                }case "Währungsmanagment" -> {
+                }case "W","w" -> {
 
         
 
-                }case "Einzahlung" -> {
+                }case "E","e" -> {
 
         
 
-                }case "Quittung" -> {
+                }case "Q","q"  -> {
 
         
 
-                } case "exit" -> {
+                }case "exit","Exit","EXIT" -> {
 
                     //Program beenden
                     exit = false;
         
-                }                  
+                } default -> {
+                    System.out.println("Ungueltige Eingabe");
+
+                }                
                    
             }  
         }
@@ -103,7 +113,10 @@ public class Main {
                     System.out.println("Wie ist Ihr Alter");
                     Age = scanner.nextInt();
     
-                    management.neuKunde(new cKunde(Vornahme, Nachnahme, Age, KundenNr++));
+                    KundenNr = management.getLastCustomerId() + 1;
+
+
+                    management.neuKunde(new cKunde(Vornahme, Nachnahme, Age, KundenNr));
     
                     // Kunden speichern
                     management.speichernKunden();
